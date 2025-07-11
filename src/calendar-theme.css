@@ -1,0 +1,45 @@
+.react-calendar {
+  width: 100%;
+  border: none;
+  font-family: "Inter", sans-serif;
+  border-radius: 8px;
+}
+
+.react-calendar__navigation button {
+  color: #3d766f;
+  font-weight: bold;
+}
+
+.react-calendar__month-view__weekdays__weekday abbr {
+  text-decoration: none;
+  font-weight: 600;
+  color: #66c4b9;
+}
+
+.react-calendar__tile {
+  border-radius: 50%;
+}
+
+.react-calendar__tile--now {
+  background: #e6f6f5;
+  font-weight: bold;
+}
+
+.react-calendar__tile--now:hover {
+  background: #ccece9;
+}
+
+.completed-day {
+  background-color: #66c4b9 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.react-calendar__tile--active {
+  background: #529d94;
+  color: white;
+}
+
+.react-calendar__tile--active:hover {
+  background: #3d766f;
+}
