@@ -1,7 +1,7 @@
-import { Box, Text } from '@chakra-ui/react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css'; // Import default styling
-import '../calendar-theme.css'; // We will create this file to override styles
+import { Box, Text } from "@chakra-ui/react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css"; 
+import "../calendar-theme.css"; 
 
 /**
  * A component to display habit completions on a calendar.
@@ -11,13 +11,12 @@ const HabitCalendar = ({ completions = [] }) => {
   // A Set is used for fast O(1) lookups to check if a date is a completion date.
   const completionSet = new Set(completions);
 
-  // This function is called for each day tile in the calendar.
-  // We use it to add a custom class name if the day was a completion day.
+  
   const tileClassName = ({ date, view }) => {
-    if (view === 'month') {
-      const dateString = date.toISOString().split('T')[0];
+    if (view === "month") {
+      const dateString = date.toISOString().split("T")[0];
       if (completionSet.has(dateString)) {
-        return 'completed-day'; // Add a CSS class to completed days
+        return "completed-day"; 
       }
     }
     return null;
@@ -28,11 +27,7 @@ const HabitCalendar = ({ completions = [] }) => {
       <Text fontSize="lg" fontWeight="bold" mb={4}>
         Completion Calendar
       </Text>
-      <Calendar
-        tileClassName={tileClassName}
-        // You can set other props here, like a maxDate to prevent future selections
-        maxDate={new Date()} 
-      />
+      <Calendar tileClassName={tileClassName} maxDate={new Date()} />
     </Box>
   );
 };
